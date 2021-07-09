@@ -45,7 +45,7 @@
             <version>${surefire.version}</version>
             <configuration>
                 <includes>
-                    <include>Test2.java</include>
+                    <include>Test3.java</include>
                 </includes>
 <!--                <suiteXmlFiles>-->
 <!--                    &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
