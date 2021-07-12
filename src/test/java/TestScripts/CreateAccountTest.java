@@ -26,7 +26,6 @@ public class CreateAccountTest {
         String browser=System.getProperty("browser");
         driver = DriverSelection.select(Objects.requireNonNullElse(browser, "chrome"));
         driver.get("https://www.google.com");
-        System.out.println(propertyFileReader.getProperty("url"));
         driver.get(propertyFileReader.getProperty("url"));
     }
     @Test
