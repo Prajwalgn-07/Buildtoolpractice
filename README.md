@@ -17,6 +17,7 @@ If we don't give the browser in command the default browser is chrome
 For unit tests the commands used are:
 - mvn -Dtest=<AddingToCartTest/CreateAccountTest> -Dbrowser=<chrome/firefox> test (To run specific unit test using specific browser)
 - mvn -Dbrowser=<chrome/firefox> test (To run all the unit tests with specific browser)
+- mvn -Dtest=<AddingToCartTest/CreateAccountTest>(it will run specific test with default browser as chrome)
 
 ## Task3:Creating profiles(testing and staging) with property has url
 
