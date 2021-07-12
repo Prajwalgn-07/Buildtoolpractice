@@ -16,6 +16,8 @@ public class Homepage extends PageInitialisation {
     WebElement cart;
     @FindBy(linkText = "Sign in")
     WebElement signIn;
+    @FindBy(id="contact-link")
+    WebElement contactUs;
     public void ViewShortPrintedDress(){
         shortPrintedDress.click();
     }
@@ -27,6 +29,9 @@ public class Homepage extends PageInitialisation {
     }
     public void GoToSignInPage(){
         signIn.click();
+    }
+    public void GoToContactUs(){
+        contactUs.click();
     }
 
 }

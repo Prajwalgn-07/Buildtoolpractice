@@ -1,11 +1,3 @@
-Pages/LongPrintedDressPage.class
-Pages/ShortPrintedDressPage.class
-TestScripts/AddingToCartTest.class
-TestScripts/DriverSelection.class
 TestScripts/CreateAccountTest.class
-Pages/PageInitialisation.class
-Pages/Homepage.class
-Pages/LoginPage.class
-Pages/CreateAccountPage.class
-TestScripts/ActivityCapture.class
-Pages/CartPage.class
+TestScripts/AddingToCartTest.class
+TestScripts/IT/TEST1IT.class

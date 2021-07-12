@@ -31,7 +31,7 @@ public class ContactUsPage extends PageInitialisation {
     }
     public void selectSubjectHeading(){
         Select heading=new Select(subjectHeading);
-        heading.selectByValue("2");
+        heading.selectByValue("1");
     }
     public void addEmail(){
         email.sendKeys((String)jsonObject.get("email"));

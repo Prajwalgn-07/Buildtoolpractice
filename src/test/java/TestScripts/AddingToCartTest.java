@@ -1,25 +1,36 @@
 package TestScripts;
 
-import org.openqa.selenium.WebDriver;
 import Pages.CartPage;
 import Pages.Homepage;
 import Pages.LongPrintedDressPage;
 import Pages.ShortPrintedDressPage;
+import Utilities.DriverSelection;
+import Utilities.PropertyFileReader;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class AddingToCartTest {
-    @Test
-    public void test() throws IOException {
-        WebDriver driver= DriverSelection.select("chrome");
+    WebDriver driver;
+    @BeforeTest
+    public void setupDriver() throws IOException {
+        PropertyFileReader propertyFileReader=new PropertyFileReader();
+        String browser=System.getProperty("browser");
+        driver = DriverSelection.select(Objects.requireNonNullElse(browser, "chrome"));
         driver.get("https://www.google.com");
-        driver.get("http://automationpractice.com/index.php");
+        System.out.println(propertyFileReader.getProperty("url"));
+        driver.get(propertyFileReader.getProperty("url"));
+    }
+    @Test
+    public void test(){
         Homepage homepage=new Homepage(driver);
         CartPage cart=new CartPage(driver);
         ShortPrintedDressPage shortPrintedDress=new ShortPrintedDressPage(driver);
         LongPrintedDressPage longPrintedDress=new LongPrintedDressPage(driver);
-        try {
             homepage.ViewShortPrintedDress();
             shortPrintedDress.AddShortPrintedDressToCart(driver);
             driver.navigate().back();
@@ -28,9 +39,9 @@ public class AddingToCartTest {
             driver.navigate().back();
             homepage.ViewCart();
             cart.GetTotalAmountInCart();
-       }
-        finally {
-            driver.quit();
-        }
+    }
+    @AfterTest
+    public void exitDriver(){
+        driver.quit();
     }
 }

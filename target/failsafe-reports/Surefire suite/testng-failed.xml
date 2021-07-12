@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
+  <test thread-count="1" name="Surefire test(failed)" verbose="0">
+    <classes>
+      <class name="TestScripts.IT.Test2IT">
+        <methods>
+          <include name="setupDriver"/>
+          <include name="CreateAccountAndSendAFeedback"/>
+          <include name="quitDriver"/>
+        </methods>
+      </class> <!-- TestScripts.IT.Test2IT -->
+      <class name="TestScripts.IT.TEST1IT">
+        <methods>
+          <include name="setUpDriver"/>
+          <include name="quitDriver"/>
+          <include name="CreateAccountAddToCart"/>
+        </methods>
+      </class> <!-- TestScripts.IT.TEST1IT -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

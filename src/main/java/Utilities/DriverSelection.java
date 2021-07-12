@@ -12,8 +12,8 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import java.util.concurrent.TimeUnit;
 
 public class DriverSelection {
-    public static WebDriver select(String webdriver){
-        if(webdriver=="chrome"){
+    public static WebDriver select(String webDriver){
+        if(webDriver.equals("chrome")){
             WebDriverManager.chromedriver().setup();
                 //headless
                     ChromeOptions options=new ChromeOptions();

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: TestScripts.IT.TEST1IT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 39.665 s - in TestScripts.IT.TEST1IT

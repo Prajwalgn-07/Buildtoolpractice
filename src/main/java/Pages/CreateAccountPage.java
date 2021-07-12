@@ -48,7 +48,7 @@ public class CreateAccountPage extends PageInitialisation {
     @FindBy(id="submitAccount")
     WebElement submitDetails;
     JSONParser parser=new JSONParser();
-    Object obj=parser.parse(new FileReader("/Users/prajwal/Desktop/testvagrant /assignment projects/Buildtoolpractice/src/test/java/Properties/details.json"));
+    Object obj=parser.parse(new FileReader("/Users/prajwal/Desktop/testvagrant /assignment projects/Buildtoolpractice/src/main/java/Properties/details.json"));
     JSONObject jsonObject=(JSONObject) obj;
     public void FillDetails(){
         if(jsonObject.get("gender").equals("male")){

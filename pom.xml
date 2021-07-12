@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.example</groupId>
     <artifactId>Buildtoolpractice</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -15,6 +14,7 @@
         <selenium.java>3.141.59</selenium.java>
         <webdrivemanager>4.4.3</webdrivemanager>
         <testng.version>7.4.0</testng.version>
+        <property>browser</property>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -42,50 +42,74 @@
             <version>1.1</version>
         </dependency>
     </dependencies>
+    <profiles>
+        <profile>
+            <id>testing</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <configuration>
+                                    <tasks>
+                                        <delete file="${project.build.outputDirectory}/environment.properties"/>
+                                        <copy file="src/main/resources/environment.test.properties"
+                                              tofile="${project.build.outputDirectory}/environment.properties"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <version>3.0.0-M5</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>staging</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <configuration>
+                                    <tasks>
+                                        <delete file="${project.build.outputDirectory}/environment.properties"/>
+                                        <copy file="src/main/resources/environment.staging.properties"
+                                              tofile="${project.build.outputDirectory}/environment.properties"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <version>3.0.0-M5</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 <build>
     <plugins>
         <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M5</version>
-            <configuration>
-                <includes>
-                    <include>CreateAccountTest.java</include>
-                </includes>
-            </configuration>
         </plugin>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <version>3.0.0-M4</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>integration-test</goal>
-                        <goal>verify</goal>
-                    </goals>
-                </execution>
-            </executions>
         </plugin>
-<!--        <plugin>-->
-<!--            <groupId>org.codehaus.mojo</groupId>-->
-<!--            <artifactId>build-helper-maven-plugin</artifactId>-->
-<!--            <version>1.5</version>-->
-<!--            <executions>-->
-<!--                <execution>-->
-<!--                    <id>add-test-source</id>-->
-<!--                    <phase>process-resources</phase>-->
-<!--                    <goals>-->
-<!--                        <goal>add-test-source</goal>-->
-<!--                    </goals>-->
-<!--                    <configuration>-->
-<!--                        <sources>-->
-<!--                            <source>src/it/java</source>-->
-<!--                        </sources>-->
-<!--                    </configuration>-->
-<!--                </execution>-->
-<!--            </executions>-->
-<!--        </plugin>-->
     </plugins>
 </build>
 </project>

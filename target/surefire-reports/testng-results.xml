@@ -2,16 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-10T12:17:57 IST" name="Surefire suite" finished-at="2021-07-10T12:18:30 IST" duration-ms="33220">
+  <suite started-at="2021-07-12T13:29:04 IST" name="Surefire suite" finished-at="2021-07-12T13:29:26 IST" duration-ms="22260">
     <groups>
     </groups>
-    <test started-at="2021-07-10T12:17:57 IST" name="Surefire test" finished-at="2021-07-10T12:18:30 IST" duration-ms="33220">
-      <class name="TestScripts.CreateAccountTest">
-        <test-method signature="test()[pri:0, instance:TestScripts.CreateAccountTest@55b699ef]" started-at="2021-07-10T12:17:57 IST" name="test" finished-at="2021-07-10T12:18:30 IST" duration-ms="33205" status="PASS">
+    <test started-at="2021-07-12T13:29:04 IST" name="Surefire test" finished-at="2021-07-12T13:29:26 IST" duration-ms="22260">
+      <class name="TestScripts.AddingToCartTest">
+        <test-method is-config="true" signature="setupDriver()[pri:0, instance:TestScripts.AddingToCartTest@557caf28]" started-at="2021-07-12T13:29:04 IST" name="setupDriver" finished-at="2021-07-12T13:29:15 IST" duration-ms="11093" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method signature="test()[pri:0, instance:TestScripts.AddingToCartTest@557caf28]" started-at="2021-07-12T13:29:15 IST" name="test" finished-at="2021-07-12T13:29:26 IST" duration-ms="11058" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-      </class> <!-- TestScripts.CreateAccountTest -->
+        <test-method is-config="true" signature="exitDriver()[pri:0, instance:TestScripts.AddingToCartTest@557caf28]" started-at="2021-07-12T13:29:26 IST" name="exitDriver" finished-at="2021-07-12T13:29:26 IST" duration-ms="92" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exitDriver -->
+      </class> <!-- TestScripts.AddingToCartTest -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>
