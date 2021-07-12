@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 
-public class TEST1IT {
+public class IntegrationTestIT {
     WebDriver driver;
     @BeforeTest
     public void setUpDriver() throws FileNotFoundException {

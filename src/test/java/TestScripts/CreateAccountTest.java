@@ -33,12 +33,12 @@ public class CreateAccountTest {
         Homepage homepage=new Homepage(driver);
         CreateAccountPage createAccountPage=new CreateAccountPage(driver);
         LoginPage loginPage=new LoginPage(driver);
-            homepage.GoToSignInPage();
-            loginPage.TypeEmail();
-            loginPage.ClickCreateAccount();
-            createAccountPage.FillDetails();
-            System.out.println(driver.getTitle());
-//            createAccountPage.submitDetails();
+        homepage.GoToSignInPage();
+        loginPage.TypeEmail();
+        loginPage.ClickCreateAccount();
+        createAccountPage.FillDetails();
+        System.out.println(driver.getTitle());
+        createAccountPage.submitDetails();
     }
     @AfterTest
     public void exitDriver(){

@@ -30,14 +30,14 @@ public class AddingToCartTest {
         CartPage cart=new CartPage(driver);
         ShortPrintedDressPage shortPrintedDress=new ShortPrintedDressPage(driver);
         LongPrintedDressPage longPrintedDress=new LongPrintedDressPage(driver);
-            homepage.ViewShortPrintedDress();
-            shortPrintedDress.AddShortPrintedDressToCart(driver);
-            driver.navigate().back();
-            homepage.ViewLongPrintedDress();
-            longPrintedDress.AddLongPrintedDressToCart(driver);
-            driver.navigate().back();
-            homepage.ViewCart();
-            cart.GetTotalAmountInCart();
+        homepage.ViewShortPrintedDress();
+        shortPrintedDress.AddShortPrintedDressToCart(driver);
+        driver.navigate().back();
+        homepage.ViewLongPrintedDress();
+        longPrintedDress.AddLongPrintedDressToCart(driver);
+        driver.navigate().back();
+        homepage.ViewCart();
+        cart.GetTotalAmountInCart();
     }
     @AfterTest
     public void exitDriver(){

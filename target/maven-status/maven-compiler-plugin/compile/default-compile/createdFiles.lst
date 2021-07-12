@@ -1,12 +1,12 @@
-Utilities/DriverSelection.class
-Pages/CreateAccountPage.class
-Pages/MyAccountPage.class
-Pages/CartPage.class
 Pages/LongPrintedDressPage.class
 Pages/ShortPrintedDressPage.class
 Utilities/PropertyFileReader.class
 Utilities/ActivityCapture.class
 Pages/ContactUsPage.class
+Utilities/DriverSelection.class
 Pages/PageInitialisation.class
 Pages/Homepage.class
 Pages/LoginPage.class
+Pages/CreateAccountPage.class
+Pages/MyAccountPage.class
+Pages/CartPage.class
